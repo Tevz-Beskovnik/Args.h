@@ -1,11 +1,11 @@
 ARGS
 ==========
 
-A all in one, single file argument parsing library for C++.
+An all in one, single file argument parsing library for C++.
 
 ## Inclusion
 
-To include the library into your project define the required `args.h` defines. Make sure they are places above the include statement as shown bellow:
+To include the library into your project define the required `args.h` defines. Make sure they are placed above the `include` statement as shown below:
 
 ```cpp
 #define ARGS_INIT
@@ -17,15 +17,18 @@ To include the library into your project define the required `args.h` defines. M
 #include "args.h"
 ```
 
-> **_NOTE:_**  If not defined `args.h` defines a very bare bones set of initializing defines to avoid errors.
+> **_NOTE:_**  If not defined, `args.h` defines a very bare bones set of initializing defines to avoid errors.
 
 ## Usage
 
-Argument definitions are implemented in they style of c macros and all go into the base `ARGS_LIST` macro. `args.h` provides 4 different argument types:
+Argument definitions are implemented in the style of C macros and all go into the base `ARGS_LIST` macro.
+
+`args.h` provides 4 different argument types:
+
 - Required arguments,
 - optional arguments, with default values,
 - list arguments,
-- boolean arguments 
+- boolean arguments
 
 **Required argument:**
 
@@ -63,13 +66,13 @@ Argument definitions are implemented in they style of c macros and all go into t
     LIST_ARG(opts, float, "Optional coeffs", false)
 ```
 
-The library knows nothing more about the arguments then their requirement rules. All other semantic checking should be done after parsing on the users end.
+The library knows nothing about the arguments other than their requirement rules. All other semantic checking should be done after parsing on the users end.
 
-The header provides automatic generation of the help page, the help parameter, and display of it when the requirement rules are not met of if the `--help` flag is in the executable call.
+The header provides automatic generation of the help page, the help parameter, and display of it when the requirement rules are not met, if the `--help` flag is in the executable call.
 
 ### Parsing arguments
 
-The `parse_args()` is the function used to parse the user input. The function returns a boolean depending on if the user input was parsed sucessfuly.
+The `parse_args()` is the function used to parse the user input. The function returns a boolean, depending on whether the user input was parsed successfully.
 
 ```cpp
 int main(int argc, char *argv[]) {
@@ -82,7 +85,7 @@ int main(int argc, char *argv[]) {
 
 ## Supported types
 
-All types that are supported by the `stringstream` operator are supported, everyting else is up to future implementation as my needs see it, or just PR :).
+All types supported by the `stringstream` operator are also supported by this library, everyting else is up to future implementation as my needs see it, or just PR :).
 
-> **_NOTE:_**  Quoted input strings with spaces are not supported, aswell as pointer types. If you need to read a string from the input be sure to use the C++ `std::string` object and not `char *`.
+> **_NOTE:_**  Quoted input strings with spaces are not supported, as well as pointer types. If you need to read a string from the input be sure to use the C++ `std::string` object and not `char *`.
 
