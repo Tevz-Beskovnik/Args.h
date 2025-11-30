@@ -69,7 +69,16 @@ The header provides automatic generation of the help page, the help parameter, a
 
 ### Parsing arguments
 
+The `parse_args()` is the function used to parse the user input. The function returns a boolean depending on if the user input was parsed sucessfuly.
 
+```cpp
+int main(int argc, char *argv[]) {
+    args_t args;
+    if(!parse_args(argc, argv, &args) return -1;
+    else
+        // args parsed successfuly
+}
+```
 
 ## Supported types
 
