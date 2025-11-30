@@ -73,7 +73,7 @@ The header provides automatic generation of the help page, the help parameter, a
 
 ## Supported types
 
-All types that are supported by the `stringstream` operator are supported, everyting else is up to future implementation as my needs see i operator are supported, everyting else is up to future implementation if I need it, or just PR them in as need be.
+All types that are supported by the `stringstream` operator are supported, everyting else is up to future implementation as my needs see it, or just PR :).
 
 > **_NOTE:_**  Quoted input strings with spaces are not supported, aswell as pointer types. If you need to read a string from the input be sure to use the C++ `std::string` object and not `char *`.
 
