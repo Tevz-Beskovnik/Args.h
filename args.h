@@ -1,4 +1,3 @@
-
 /*
  * ARGUMENT PARSING LIBRARY FOR C++
  *
@@ -39,7 +38,7 @@ struct args_t {
 #define LIST_ARG(NAME, TYPE, _0, _1) std::vector<TYPE> NAME;
 
 
-ARGS_LIST
+_ARGS_LIST
 
 
 #undef REQUIRED_ARG
@@ -83,7 +82,7 @@ bool parse_args(int argc, char *argv[], args_t *out_args)
 #define LIST_ARG(NAME, TYPE, _0, REQ) int NAME = _ARGS_INTERNAL_CALL(parse_list_arg)(argc, argv, (std::vector<TYPE> *)((uint8_t *)out_args + offsetof(args_t, NAME)), #NAME, REQ);\
     CHECK_RET(NAME)
 
-    ARGS_LIST
+    _ARGS_LIST
 
     return true;
 
@@ -140,7 +139,7 @@ std::cout << "--" << #name << " " << (required ? "{" : "[") << "value.." << (req
     std::cout << ARGS_PROGRAM_DESCRIPTION << std::endl;
     std::cout << output;
 
-    ARGS_LIST
+    _ARGS_LIST
 
 #undef REQUIRED_ARG
 #undef OPTIONAL_ARG
