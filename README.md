@@ -87,5 +87,5 @@ int main(int argc, char *argv[]) {
 
 All types supported by the `stringstream` operator are also supported by this library, everyting else is up to future implementation as my needs see it, or just PR :).
 
-> **_NOTE:_**  Quoted input strings with spaces are not supported, as well as pointer types. If you need to read a string from the input be sure to use the C++ `std::string` object and not `char *`.
+> **_NOTE:_**  Pointers cannot be used as input argument types. If you need to read a string from the input be sure to use the C++ `std::string` object and not `char *`.
 
