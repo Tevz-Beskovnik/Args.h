@@ -14,9 +14,8 @@
 
 #define _ARGS_LIST BOOLEAN_ARG(help, "Print this message") \
     ARGS_LIST
-#define ARGS_INTERNAL_PREFIX args
-#define _ARGS_INTERNAL_FN(fn) _##ARGS_INTERNAL_PREFIX##_##fn
-#define _ARGS_INTERNAL_CALL(fn) _##ARGS_INTERNAL_PREFIX##_##fn
+#define _ARGS_INTERNAL_FN(fn) _##args##_##fn
+#define _ARGS_INTERNAL_CALL(fn) _##args##_##fn
 
 #include <vector>
 #include <cstdint>
@@ -98,6 +97,14 @@ bool _ARGS_INTERNAL_FN(parse_arg)(T *field, char *value)
 {
     std::stringstream ss(value);
     ss >> *field;
+
+    return true;
+}
+
+template<>
+bool _ARGS_INTERNAL_FN(parse_arg)(std::string *field, char *value)
+{
+    *field = value;
 
     return true;
 }
